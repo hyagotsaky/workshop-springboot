@@ -25,21 +25,21 @@ public class User implements Serializable {
 	private Long id;	
 	private String name;	
 	private String email;	
-	private String pone;	
+	private String phone;	
 	private String password;
 	
-	@JsonIgnore
+	
 	@OneToMany(mappedBy = "client")
 	private List<Order> orders = new ArrayList<>();
 	
 	public User() {
 	}
 	
-	public User(Long id, String name, String email, String pone, String password) {
+	public User(Long id, String name, String email, String phone, String password) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		this.pone = pone;
+		this.phone = phone;
 		this.password = password;
 	}
 
@@ -67,12 +67,12 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	public String getPone() {
-		return pone;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setPone(String pone) {
-		this.pone = pone;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getPassword() {
